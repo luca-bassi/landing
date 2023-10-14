@@ -1,0 +1,23 @@
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.bg-background {
+  background-color: var(--background);
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-on-background {
+  color: var(--on-background);
+}
+
+.text-on-primary {
+  color: var(--on-primary);
+}

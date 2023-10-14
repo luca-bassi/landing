@@ -13,6 +13,4 @@
   });
 </script>
 
-{#if imgUrl}
-  <img src={imgUrl} alt="propic" class="rounded-2xl w-60 md:w-auto md:h-[200px]"/>
-{/if}
+<img src={imgUrl} id="propic" class="rounded-2xl w-60 md:w-auto md:h-48" crossorigin="anonymous"/>
