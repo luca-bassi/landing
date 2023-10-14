@@ -14,7 +14,6 @@
 
   onMount(async function(){
     const propic = document.querySelector('#propic');
-    console.log(propic)
 
     propic.onload = async function(){
       await getPalette().then((palette) => {
@@ -27,7 +26,6 @@
       const mainHct = Hct.fromInt(sourceColor);
       const theme = themeFromSourceColor(mainHct);
 
-      console.log(theme)
       const dark = theme.schemes.dark;
 
       const primary = dark.primary;
