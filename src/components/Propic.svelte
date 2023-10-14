@@ -14,7 +14,5 @@
 </script>
 
 {#if imgUrl}
-  <p>url: {imgUrl}</p>
-{:else}
-  <p>Loading...</p>
+  <img src={imgUrl} alt="propic" class="rounded-2xl min-w-full w-64 md:w-auto md:h-[200px]"/>
 {/if}
