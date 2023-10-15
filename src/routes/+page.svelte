@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte';
+  import { mode } from '$lib/themeStore';
 
   import Propic from "../components/Propic.svelte";
   import Socials from "../components/Socials.svelte";
@@ -11,14 +12,29 @@
     sourceColorFromImage
   } from '@material/material-color-utilities';
 
+  let schemes = {};
+
+  function setPalette() {
+    console.log($mode)
+    const palette = schemes[$mode];
+    document.documentElement.style.setProperty('--background', palette.background);
+    document.documentElement.style.setProperty('--primary', palette.primary);
+    document.documentElement.style.setProperty('--on-background', palette.onBackground);
+    document.documentElement.style.setProperty('--on-primary', palette.onPrimary);
+    document.querySelector('meta[name="theme-color"]').setAttribute("content", palette.background);
+  }
+
+  function togglePalette() {
+    mode.set($mode == 'dark' ? 'light' : 'dark');
+    setPalette();
+  }
 
   onMount(async function(){
     const propic = document.querySelector('#propic');
 
     propic.onload = async function(){
-      await getPalette().then((palette) => {
-        setPalette(palette);
-      });
+      schemes = await getPalette();
+      setPalette();
     };
 
     async function getPalette() {
@@ -27,27 +43,22 @@
       const theme = themeFromSourceColor(mainHct);
 
       const dark = theme.schemes.dark;
-
-      const primary = dark.primary;
-      const background = dark.background;
-      const onPrimary = dark.onPrimary;
-      const onBackground = dark.onBackground;
+      const light = theme.schemes.light;
 
       return {
-        primary: hexFromArgb(primary),
-        background: hexFromArgb(background),
-        onPrimary: hexFromArgb(onPrimary),
-        onBackground: hexFromArgb(onBackground)
+        dark: {
+          primary: hexFromArgb(dark.primary),
+          background: hexFromArgb(dark.background),
+          onPrimary: hexFromArgb(dark.onPrimary),
+          onBackground: hexFromArgb(dark.onBackground)
+        },
+        light: {
+          primary: hexFromArgb(light.primary),
+          background: hexFromArgb(light.background),
+          onPrimary: hexFromArgb(light.onPrimary),
+          onBackground: hexFromArgb(light.onBackground)
+        }
       }
-    }
-
-    function setPalette(palette) {
-      console.log(palette)
-      document.documentElement.style.setProperty('--background', palette.background);
-      document.documentElement.style.setProperty('--primary', palette.primary);
-      document.documentElement.style.setProperty('--on-background', palette.onBackground);
-      document.documentElement.style.setProperty('--on-primary', palette.onPrimary);
-      document.querySelector('meta[name="theme-color"]').setAttribute("content", palette.background);
     }
   });
 </script>
@@ -59,7 +70,7 @@
 <div class="min-h-screen flex flex-col justify-center items-center bg-background p-2">
 
   <div class="flex flex-col md:flex-row gap-8">
-    <div class="flex justify-center">
+    <div class="flex justify-center" on:click={togglePalette}>
       <Propic/>
     </div>
   
