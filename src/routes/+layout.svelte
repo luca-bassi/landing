@@ -5,10 +5,10 @@
 
 <style>
   :root {
-    --primary: #64748b;
-    --background: #1e293b;
-    --on-background: #94a3b8;
-    --on-primary: #475569;
+    --primary: #71717a;
+    --background: #27272a;
+    --on-background: #a1a1aa;
+    --on-primary: #52525b;
   }
 </style>
 
