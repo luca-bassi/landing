@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte';
-  import { mode } from '$lib/themeStore';
+  import { mode, schemes } from '$lib/themeStore';
 
   import Propic from "../components/Propic.svelte";
   import Socials from "../components/Socials.svelte";
@@ -12,16 +12,13 @@
     sourceColorFromImage
   } from '@material/material-color-utilities';
 
-  let schemes = {};
-
   function setPalette() {
-    console.log($mode)
-    const palette = schemes[$mode];
-    document.documentElement.style.setProperty('--background', palette.background);
-    document.documentElement.style.setProperty('--primary', palette.primary);
-    document.documentElement.style.setProperty('--on-background', palette.onBackground);
-    document.documentElement.style.setProperty('--on-primary', palette.onPrimary);
-    document.querySelector('meta[name="theme-color"]').setAttribute("content", palette.background);
+    const colors = $schemes[$mode];
+    document.documentElement.style.setProperty('--background', colors.background);
+    document.documentElement.style.setProperty('--primary', colors.primary);
+    document.documentElement.style.setProperty('--on-background', colors.onBackground);
+    document.documentElement.style.setProperty('--on-primary', colors.onPrimary);
+    document.querySelector('meta[name="theme-color"]').setAttribute("content", colors.background);
   }
 
   function togglePalette() {
@@ -33,7 +30,8 @@
     const propic = document.querySelector('#propic');
 
     propic.onload = async function(){
-      schemes = await getPalette();
+      const palette = await getPalette();
+      schemes.set(palette);
       setPalette();
     };
 
