@@ -1,5 +1,4 @@
 <script>
-  import { onMount } from 'svelte';
   import { mode, schemes } from '$lib/themeStore';
 
   import Propic from "../components/Propic.svelte";
@@ -26,39 +25,34 @@
     setPalette();
   }
 
-  onMount(async function(){
+  async function loadAndSetScheme() {
     const propic = document.querySelector('#propic');
 
-    propic.onload = async function(){
-      const palette = await getPalette();
-      schemes.set(palette);
-      setPalette();
-    };
+    const sourceColor = await sourceColorFromImage(propic);
+    const mainHct = Hct.fromInt(sourceColor);
+    const theme = themeFromSourceColor(mainHct);
 
-    async function getPalette() {
-      const sourceColor = await sourceColorFromImage(propic);
-      const mainHct = Hct.fromInt(sourceColor);
-      const theme = themeFromSourceColor(mainHct);
+    const dark = theme.schemes.dark;
+    const light = theme.schemes.light;
 
-      const dark = theme.schemes.dark;
-      const light = theme.schemes.light;
-
-      return {
-        dark: {
-          primary: hexFromArgb(dark.primary),
-          background: hexFromArgb(dark.background),
-          onPrimary: hexFromArgb(dark.onPrimary),
-          onBackground: hexFromArgb(dark.onBackground)
-        },
-        light: {
-          primary: hexFromArgb(light.primary),
-          background: hexFromArgb(light.background),
-          onPrimary: hexFromArgb(light.onPrimary),
-          onBackground: hexFromArgb(light.onBackground)
-        }
+    const palette = {
+      dark: {
+        primary: hexFromArgb(dark.primary),
+        background: hexFromArgb(dark.background),
+        onPrimary: hexFromArgb(dark.onPrimary),
+        onBackground: hexFromArgb(dark.onBackground)
+      },
+      light: {
+        primary: hexFromArgb(light.primary),
+        background: hexFromArgb(light.background),
+        onPrimary: hexFromArgb(light.onPrimary),
+        onBackground: hexFromArgb(light.onBackground)
       }
     }
-  });
+
+    schemes.set(palette);
+    setPalette();
+  };
 </script>
 
 <svelte:head>
@@ -69,9 +63,9 @@
 
   <div class="flex flex-col md:flex-row gap-8">
     <div class="flex justify-center" on:click={togglePalette}>
-      <Propic/>
+      <Propic on:imgload={loadAndSetScheme}/>
     </div>
-  
+
     <div class="flex flex-col gap-4 justify-between">
       <div class="flex flex-col gap-2">
         <div>
