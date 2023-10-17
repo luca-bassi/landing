@@ -1,5 +1,6 @@
 <script>
   import { mode, schemes } from '$lib/themeStore';
+  import { fade } from 'svelte/transition';
 
   import Propic from "../components/Propic.svelte";
   import Socials from "../components/Socials.svelte";
@@ -10,6 +11,8 @@
     themeFromSourceColor,
     sourceColorFromImage
   } from '@material/material-color-utilities';
+
+  let ready;
 
   function setPalette() {
     const colors = $schemes[$mode];
@@ -52,32 +55,35 @@
 
     schemes.set(palette);
     setPalette();
+
+    ready = true;
   };
 </script>
 
 <svelte:head>
-	<meta name="theme-color" content="#1e293b" />
+	<meta name="theme-color" content="#27272a" />
 </svelte:head>
 
 <div class="min-h-screen flex flex-col justify-center items-center bg-background p-2">
 
-  <div class="flex flex-col md:flex-row gap-8">
-    <div class="flex justify-center" on:click={togglePalette}>
-      <Propic on:imgload={loadAndSetScheme}/>
-    </div>
-
-    <div class="flex flex-col gap-4 justify-between">
-      <div class="flex flex-col gap-2">
-        <div>
-          <h1 class="text-4xl text-primary">るk</h1>
-          <h2 class="text-base text-primary">@lucabassiart</h2>
-        </div>
-        <p class="text-on-background">Musician, artist. Creating is purpose</p>
+  {#key ready}
+    <div class="flex flex-col md:flex-row gap-8" class:hidden={!ready} in:fade={{duration: 1000}}>
+      <div class="flex justify-center" on:click={togglePalette}>
+        <Propic on:imgload={loadAndSetScheme}/>
       </div>
 
-      <Socials/>
-    </div>
-  </div>
+      <div class="flex flex-col gap-4 justify-between">
+        <div class="flex flex-col gap-2">
+          <div>
+            <h1 class="text-4xl text-primary">るk</h1>
+            <h2 class="text-base text-primary">@lucabassiart</h2>
+          </div>
+          <p class="text-on-background">Musician, artist. Creating is purpose</p>
+        </div>
 
+        <Socials/>
+      </div>
+    </div>
+  {/key}
 </div>
 
