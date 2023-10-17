@@ -32,8 +32,8 @@
     const propic = document.querySelector('#propic');
 
     const sourceColor = await sourceColorFromImage(propic);
-    const mainHct = Hct.fromInt(sourceColor);
-    const theme = themeFromSourceColor(mainHct);
+    // const mainHct = Hct.fromInt(sourceColor);
+    const theme = themeFromSourceColor(sourceColor);
 
     const dark = theme.schemes.dark;
     const light = theme.schemes.light;
@@ -52,6 +52,8 @@
         onBackground: hexFromArgb(light.onBackground)
       }
     }
+
+    console.log(palette)
 
     schemes.set(palette);
     setPalette();
