@@ -16,6 +16,10 @@
   });
 </script>
 
+<svelte:head>
+  <link id="favicon" rel="shortcut icon" type="image/jpg" href={imgUrl}/>
+</svelte:head>
+
 {#if imgUrl}
   <img src={imgUrl} id="propic" on:load={() => dispatch('imgload')} class="rounded-2xl w-60 md:w-auto md:h-48" crossorigin="anonymous"/>
 {/if}
