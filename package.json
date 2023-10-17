@@ -18,6 +18,10 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@material/material-color-utilities": "^0.2.7"
+		"@material/material-color-utilities": "^0.2.7",
+		"@sveltejs/adapter-static": "^2.0.3"
+	},
+	"engines": {
+		"node": ">=16.14"
 	}
 }
