@@ -1,6 +1,8 @@
 <script>
-  import "../app.css";
   import "../global.css";
+  import "../app.css";
+
+  import PaletteLoader from "../components/PaletteLoader.svelte";
 </script>
 
 <style>
@@ -11,5 +13,11 @@
     --on-primary: #52525b;
   }
 </style>
+
+<svelte:head>
+	<meta name="theme-color" content="#27272a" />
+</svelte:head>
+
+<PaletteLoader/>
 
 <slot />
