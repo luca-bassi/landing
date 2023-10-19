@@ -5,12 +5,16 @@
   import Socials from "../components/Socials.svelte";
   import { propicUrl } from '$lib/propicStore';
 
-  import togglePalette from '../components/PaletteLoader.svelte';
+  import { mode } from '$lib/themeStore';
 
   let ready;
   propicUrl.subscribe(function(url){
     ready = true;
   });
+
+  function togglePalette() {
+    mode.set($mode == 'dark' ? 'light' : 'dark');
+  }
 </script>
 
 <div class="min-h-screen flex flex-col justify-center items-center bg-background p-2">

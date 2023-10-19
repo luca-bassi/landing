@@ -1,5 +1,4 @@
 <script>
-  import { createEventDispatcher } from 'svelte';
   import { propicUrl } from '$lib/propicStore';
 </script>
 
