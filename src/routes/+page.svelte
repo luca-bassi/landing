@@ -3,26 +3,22 @@
 
   import Propic from "../components/Propic.svelte";
   import Socials from "../components/Socials.svelte";
-  import { propicUrl } from '$lib/propicStore';
 
   import { mode } from '$lib/themeStore';
 
   let ready;
-  propicUrl.subscribe(function(url){
-    ready = true;
-  });
 
   function togglePalette() {
     mode.set($mode == 'dark' ? 'light' : 'dark');
   }
 </script>
 
-<div class="min-h-screen flex flex-col justify-center items-center bg-background p-2">
+<div class="min-h-screen flex flex-col justify-center items-center p-2">
 
   {#key ready}
     <div class="flex flex-col md:flex-row gap-8" class:hidden={!ready} in:fade={{duration: 1000}}>
       <div class="flex justify-center" on:click={togglePalette}>
-        <Propic/>
+        <Propic on:imgload={() => ready=true }/>
       </div>
 
       <div class="flex flex-col gap-4 justify-between">

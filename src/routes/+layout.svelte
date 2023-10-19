@@ -2,6 +2,8 @@
   import "../global.css";
   import "../app.css";
 
+  import { fade } from "svelte/transition";
+
   /* PALETTE HANDLING */
   import { onMount } from 'svelte';
   import { mode, schemes } from '$lib/themeStore';
@@ -64,6 +66,8 @@
     schemes.set(palette);
     setPalette();
   };
+
+  export let data;
 </script>
 
 <style>
@@ -79,4 +83,10 @@
 	<meta name="theme-color" content="#27272a" />
 </svelte:head>
 
-<slot />
+<div class="bg-background">
+  {#key data.path}
+  <div in:fade={{duration: 500}}>
+    <slot />
+  </div>
+  {/key}
+</div>
