@@ -6,7 +6,7 @@
   let open;
 </script>
 
-<img src={thumb} on:click={() => (open=true)} on:load={() => console.log(thumb)} class="rounded-xl aspect-square object-cover object-center cursor-pointer dark:brightness-[.8] dark:contrast-[1.2]" loading="lazy"/>
+<img src={thumb} on:click={() => (open=true)} class="rounded-xl aspect-square object-cover object-center cursor-pointer dark:brightness-[.8] dark:contrast-[1.2]" loading="lazy"/>
 
 {#if open}
   <div class="flex flex-col gap-2 items-center justify-center fixed top-0 left-0 h-screen w-screen bg-black/70 z-10 backdrop-blur-sm" on:click={() => (open=false)} in:fly={{duration:300}}>
