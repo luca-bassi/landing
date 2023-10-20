@@ -60,7 +60,7 @@
 </div>
 
 <div class="flex justify-center items-center text-primary w-full py-6 opacity-80">
-  <h6 class="font-medium cursor-pointer" on:click={() => window.scrollTo({top: 0, behavior: 'smooth'})}>made with ♡ - do not steal</h6>
+  <h6 class="font-medium">made with ♡ - do not steal</h6>
 </div>
 
 <style lang="scss">
