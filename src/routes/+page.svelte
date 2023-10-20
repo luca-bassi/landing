@@ -4,13 +4,9 @@
   import Propic from "../components/Propic.svelte";
   import Socials from "../components/Socials.svelte";
 
-  import { mode } from '$lib/themeStore';
+  import { togglePalette } from '$lib/themeStore';
 
   let ready;
-
-  function togglePalette() {
-    mode.set($mode == 'dark' ? 'light' : 'dark');
-  }
 </script>
 
 <div class="min-h-screen flex flex-col justify-center items-center p-2">

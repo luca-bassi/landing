@@ -10,3 +10,6 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
 .tool-versions
+static/images/*
+!static/images/main/.keep
+!static/images/tv/.keep
