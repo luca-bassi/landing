@@ -14,7 +14,7 @@
   {#key ready}
     <div class="flex flex-col md:flex-row gap-8" class:hidden={!ready} in:fade={{duration: 1000}}>
       <div class="flex justify-center" on:click={togglePalette}>
-        <Propic on:imgload={() => ready=true }/>
+        <Propic on:imgload={() => (ready=true) }/>
       </div>
 
       <div class="flex flex-col gap-4 justify-between">
