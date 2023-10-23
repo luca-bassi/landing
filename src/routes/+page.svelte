@@ -11,15 +11,25 @@
     sourceColorFromImage
   } from '@material/material-color-utilities';
 
+  function hexToRgb(hex) {
+    if(hex[0]=='#'){ hex = hex.substring(1) };
+    var comps = hex.match(/.{1,2}/g);
+    return `${parseInt(comps[0], 16)}, ${parseInt(comps[1], 16)}, ${parseInt(comps[2], 16)}`;
+  }
+
   let ready;
 
   function setPalette() {
     const colors = $schemes[$mode];
-    document.documentElement.style.setProperty('--background', colors.background);
-    document.documentElement.style.setProperty('--primary', colors.primary);
-    document.documentElement.style.setProperty('--on-background', colors.onBackground);
-    document.documentElement.style.setProperty('--on-primary', colors.onPrimary);
-    document.querySelector('meta[name="theme-color"]').setAttribute("content", colors.background);
+    if(!colors){ return }
+
+    document.documentElement.style.setProperty('--background', hexToRgb(colors.background));
+    document.documentElement.style.setProperty('--primary', hexToRgb(colors.primary));
+    document.documentElement.style.setProperty('--on-background', hexToRgb(colors.onBackground));
+    document.documentElement.style.setProperty('--on-primary', hexToRgb(colors.onPrimary));
+    document.querySelector('meta[name="theme-color"]').setAttribute("content", hexToRgb(colors.background));
+
+    document.documentElement.dataset.theme = $mode;
   }
 
   function togglePalette() {
@@ -60,10 +70,6 @@
     ready = true;
   };
 </script>
-
-<svelte:head>
-	<meta name="theme-color" content="#27272a" />
-</svelte:head>
 
 <div class="min-h-screen flex flex-col justify-center items-center bg-background p-2">
 
