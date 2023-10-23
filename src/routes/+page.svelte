@@ -12,6 +12,10 @@
 <div class="min-h-screen flex flex-col justify-center items-center p-2">
 
   {#key ready}
+    <div class="relative flex justify-center items-center h-3 w-3" class:hidden={ready}>
+      <span class="animate-ping h-full w-full rounded-full bg-on-background opacity-75"></span>
+    </div>
+
     <div class="flex flex-col md:flex-row gap-8" class:hidden={!ready} in:fade={{duration: 1000}}>
       <div class="flex justify-center" on:click={togglePalette}>
         <Propic on:imgload={() => (ready=true) }/>
