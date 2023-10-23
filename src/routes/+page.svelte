@@ -62,8 +62,6 @@
       }
     }
 
-    console.log(palette)
-
     schemes.set(palette);
     setPalette();
 
