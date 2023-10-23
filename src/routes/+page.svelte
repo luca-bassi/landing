@@ -7,7 +7,6 @@
 
   import {
     hexFromArgb,
-    Hct,
     themeFromSourceColor,
     sourceColorFromImage
   } from '@material/material-color-utilities';
