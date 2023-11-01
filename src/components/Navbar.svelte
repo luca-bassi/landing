@@ -3,7 +3,7 @@
   const paths = [
     { label: '/', url: '/'},
     { label: 'art', url: '/art' },
-    { label: 'music', url: '/music'}
+    // { label: 'music', url: '/music'}
   ];
 </script>
 
