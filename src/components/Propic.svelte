@@ -4,16 +4,23 @@
 
   import { createEventDispatcher } from 'svelte';
   const dispatch = createEventDispatcher();
+  const defaultUrl = 'fallback.jpg';
+
+  let useUrl = defaultUrl;
 
   onMount(function(){
     getPropicUrl();
+    dispatch('imgload');
   });
+
+  // propicUrl.subscribe((url) => {
+  //   useUrl = url;
+  //   dispatch('imgload')
+  // });
 </script>
 
 <svelte:head>
-  <link id="favicon" rel="shortcut icon" type="image/jpg" href={$propicUrl}/>
+  <link id="favicon" rel="shortcut icon" type="image/jpg" href={useUrl}/>
 </svelte:head>
 
-{#if $propicUrl}
-  <img src={$propicUrl} id="propic" on:load={() => dispatch('imgload')} class="rounded-2xl w-60 md:w-auto md:h-48" crossorigin="anonymous"/>
-{/if}
+<img src={useUrl} id="propic" class="rounded-2xl w-60 md:w-auto md:h-48" crossorigin="anonymous"/>
