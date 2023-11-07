@@ -6,7 +6,14 @@ export async function getPropicUrl(){
   const url = 'https://unavatar.io/twitter/lucabassiart?json&ttl=24h';
   const defaultUrl = 'fallback.jpg';
 
-  // const propicData = await fetch(url).then((data) => data.json());
-
-  propicUrl.set(defaultUrl);
+  try{
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 2000);
+    const propicData = await fetch(url, {signal: controller.signal}).then((data) => data.json());
+    clearTimeout(timeout);
+    propicUrl.set(propicData.url);
+  }catch(error){
+    console.log('propic timed out!')
+    propicUrl.set(defaultUrl);
+  }
 }
