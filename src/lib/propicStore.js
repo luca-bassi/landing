@@ -11,7 +11,7 @@ export async function getPropicUrl(){
     const timeout = setTimeout(() => controller.abort(), 2000);
     const propicData = await fetch(url, {signal: controller.signal}).then((data) => data.json());
     clearTimeout(timeout);
-    propicUrl.set(propicData.url);
+    propicData.url.match('fallback.png') ? propicUrl.set(defaultUrl) : propicUrl.set(propicData.url);
   }catch(error){
     console.log('propic timed out!')
     propicUrl.set(defaultUrl);

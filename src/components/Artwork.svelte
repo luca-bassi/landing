@@ -5,7 +5,8 @@
   export let thumb;
 
   let open;
-  const cdnurl = "https://ruuk999.sirv.com"; // '';
+  // const cdnurl = "https://ruuk999.sirv.com";
+  const cdnurl = 'images';
 </script>
 
 <img use:lazyLoad={`${cdnurl}/${thumb}`} on:click={() => (open=true)} class="img rounded-xl aspect-square object-cover object-center cursor-pointer dark:brightness-[.8] dark:contrast-[1.2]"/>
