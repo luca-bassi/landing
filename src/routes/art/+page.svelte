@@ -9,52 +9,52 @@
   <div class="flex flex-col divide-y">
     <!-- MAIN -->
     <div class="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 py-5">
-      <Artwork thumb="images/main/inashort.jpg" />
-      <Artwork thumb="images/main/mona.jpg" />
-      <Artwork thumb="images/main/orichara2.jpg" />
-      <Artwork thumb="images/main/petra-snow.jpg" />
-      <Artwork thumb="images/main/snow.jpg" />
-      <Artwork thumb="images/main/menhera.jpg" />
-      <Artwork thumb="images/main/kaibd.jpg" />
-      <Artwork thumb="images/main/emopurin.jpg" />
-      <Artwork thumb="images/main/orichara.jpg" />
-      <Artwork thumb="images/main/nekonoeru.jpg" />
-      <Artwork thumb="images/main/tmt.jpg" />
-      <Artwork thumb="images/main/petraneko.jpg" />
-      <Artwork thumb="images/main/monasummer.jpg" />
-      <Artwork thumb="images/main/petra.jpg" />
-      <Artwork thumb="images/main/dogson.jpg" />
-      <Artwork thumb="images/main/melchan.jpg" />
-      <Artwork thumb="images/main/calliopaint.jpg" />
-      <Artwork thumb="images/main/monyan.jpg" />
-      <Artwork thumb="images/main/uto.jpg" />
-      <Artwork thumb="images/main/hotpurin.jpg" />
-      <Artwork thumb="images/main/miobday.jpg" />
-      <Artwork thumb="images/main/noshiro.jpg" />
+      <Artwork thumb="main/inashort.jpg" />
+      <Artwork thumb="main/mona.jpg" />
+      <Artwork thumb="main/orichara2.jpg" />
+      <Artwork thumb="main/petra-snow.jpg" />
+      <Artwork thumb="main/snow.jpg" />
+      <Artwork thumb="main/menhera.jpg" />
+      <Artwork thumb="main/kaibd.jpg" />
+      <Artwork thumb="main/emopurin.jpg" />
+      <Artwork thumb="main/orichara.jpg" />
+      <Artwork thumb="main/nekonoeru.jpg" />
+      <Artwork thumb="main/tmt.jpg" />
+      <Artwork thumb="main/petraneko.jpg" />
+      <Artwork thumb="main/monasummer.jpg" />
+      <Artwork thumb="main/petra.jpg" />
+      <Artwork thumb="main/dogson.jpg" />
+      <Artwork thumb="main/melchan.jpg" />
+      <Artwork thumb="main/calliopaint.jpg" />
+      <Artwork thumb="main/monyan.jpg" />
+      <Artwork thumb="main/uto.jpg" />
+      <Artwork thumb="main/hotpurin.jpg" />
+      <Artwork thumb="main/miobday.jpg" />
+      <Artwork thumb="main/noshiro.jpg" />
     </div>
 
     <!-- OLD -->
     <div class="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 py-5">
-      <Artwork thumb="images/main/rei.jpg" />
-      <Artwork thumb="images/main/2b.jpg" />
-      <Artwork thumb="images/main/carbonmonoxide.jpg" />
-      <Artwork thumb="images/main/coop.jpg" />
-      <Artwork thumb="images/main/marzia.jpg" />
+      <Artwork thumb="main/rei.jpg" />
+      <Artwork thumb="main/2b.jpg" />
+      <Artwork thumb="main/carbonmonoxide.jpg" />
+      <Artwork thumb="main/coop.jpg" />
+      <Artwork thumb="main/marzia.jpg" />
     </div>
 
     <!-- EXTRA -->
     <div class="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 py-5">
-      <Artwork thumb="images/main/emptiness_and_helplessness.jpg" />
-      <Artwork thumb="images/main/i_dont_love.jpg" />
+      <Artwork thumb="main/emptiness_and_helplessness.jpg" />
+      <Artwork thumb="main/i_dont_love.jpg" />
     </div>
 
     <!-- TV/MOVIES -->
     <div class="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 py-5">
-      <Artwork thumb="images/tv/lit.jpg" />
-      <Artwork thumb="images/tv/breakingbad.jpg" />
-      <Artwork thumb="images/tv/arrival.jpg" />
-      <Artwork thumb="images/tv/mrrobot.jpg" />
-      <Artwork thumb="images/tv/poi.jpg" />
+      <Artwork thumb="tv/lit.jpg" />
+      <Artwork thumb="tv/breakingbad.jpg" />
+      <Artwork thumb="tv/arrival.jpg" />
+      <Artwork thumb="tv/mrrobot.jpg" />
+      <Artwork thumb="tv/poi.jpg" />
     </div>
   </div>
 </div>
