@@ -6,7 +6,7 @@
 <div class="mt-20 mb-5 px-8 lg:px-10 flex flex-col justify-center items-center gap-10">
   <h1 class="text-4xl text-primary cursor-pointer" on:click={togglePalette}>artworks</h1>
 
-  <div class="flex flex-col divide-y">
+  <div class="flex flex-col">
     <!-- MAIN -->
     <div class="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 py-5">
       <Artwork thumb="main/inashort.jpg" />
@@ -62,9 +62,3 @@
 <div class="flex justify-center items-center text-primary w-full py-6 opacity-80">
   <h6 class="font-medium">made with ♡ - do not steal</h6>
 </div>
-
-<style lang="scss">
-  .divide-y > :not([hidden]) ~ :not([hidden]) {
-    border-color: rgba(var(--primary), .08);
-  }
-</style>
