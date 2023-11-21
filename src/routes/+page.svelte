@@ -25,7 +25,7 @@
         <div class="flex flex-col gap-2">
           <div>
             <h1 class="text-4xl text-primary">るk</h1>
-            <h2 class="text-base text-primary">@lucabassiart</h2>
+            <h2 class="text-base text-primary">@ruuk999</h2>
           </div>
           <p class="text-on-background">Musician, artist. Creating is purpose</p>
         </div>
