@@ -3,7 +3,7 @@ import { writable } from 'svelte/store';
 export const propicUrl = writable();
 
 export async function getPropicUrl(){
-  const url = 'https://unavatar.io/twitter/lucabassiart?json&ttl=24h';
+  const url = 'https://unavatar.io/twitter/ruuk999?json&ttl=24h';
   const defaultUrl = 'fallback.jpg';
 
   try{
