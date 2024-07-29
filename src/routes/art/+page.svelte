@@ -9,6 +9,9 @@
   <div class="flex flex-col">
     <!-- MAIN -->
     <div class="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 py-5">
+      <Artwork thumb="main/inainaswim.jpg" />
+      <Artwork thumb="main/inafang.jpg" />
+      <Artwork thumb="main/inainabunni.jpg" />
       <Artwork thumb="main/dragoonin.jpg" />
       <Artwork thumb="main/chrinas.jpg" />
       <Artwork thumb="main/inaked.jpg" />
